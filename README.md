@@ -139,7 +139,7 @@ es_api_port: "{{cluster_http_port}}",
     es_apt_key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
     es_apt_url: deb https://artifacts.elastic.co/packages/{{ es_major_version }}/apt stable main
     public_iface: eth1
-    es_version: 5.6.1
+    elk_version: 5.6.1
     kibana_user: kibanaUser
     kibana_group: kibanaGroup
   roles:
@@ -152,7 +152,7 @@ es_api_port: "{{cluster_http_port}}",
     es_apt_key: https://artifacts.elastic.co/GPG-KEY-elasticsearch
     es_apt_url: deb https://artifacts.elastic.co/packages/{{ es_major_version }}/apt stable main
     public_iface: eth1
-    es_version: 5.6.1
+    elk_version: 5.6.1
     kibana_user: kibanaUser
     kibana_group: kibanaGroup
   roles:
