@@ -116,7 +116,7 @@ es_api_port: "{{cluster_http_port}}",
     public_iface: eth1
     es_version: 5.6.1
   roles:
-    - { role: elastic.elasticsearch, cluster_http_port: 9202, cluster_transport_tcp_port: 9302, public_iface: "eth1",
+    - { role: elastic.elasticsearch, cluster_http_port: 9202, cluster_transport_tcp_port: 9302,
 es_instance_name: "{{cluster_http_port}}_{{cluster_transport_tcp_port}}",
 discovery: "{% for host in groups['elasticsearch-nodes'] %} {{hostvars[host]['ansible_'+public_iface]['ipv4']['address'] }}:{{cluster_transport_tcp_port}}{%endfor %}",
 es_api_port: "{{cluster_http_port}}",
@@ -143,7 +143,7 @@ es_api_port: "{{cluster_http_port}}",
     kibana_user: kibanaUser
     kibana_group: kibanaGroup
   roles:
-    - { role: ashokc.kibana, instance_port: 5601, public_iface: "eth1", kibana_elasticsearch_url: "http://{{hostvars[groups['elasticsearch-nodes'][0]]['ansible_'+public_iface]['ipv4']['address'] }}:9201" }
+    - { role: ashokc.kibana, instance_port: 5601, kibana_elasticsearch_url: "http://{{hostvars[groups['elasticsearch-nodes'][0]]['ansible_'+public_iface]['ipv4']['address'] }}:9201" }
 
 - hosts: kibana-nodes
   become: true
@@ -156,6 +156,6 @@ es_api_port: "{{cluster_http_port}}",
     kibana_user: kibanaUser
     kibana_group: kibanaGroup
   roles:
-    - { role: ashokc.kibana, instance_port: 5602, public_iface: "eth1", kibana_elasticsearch_url: "http://{{hostvars[groups['elasticsearch-nodes'][0]]['ansible_'+public_iface]['ipv4']['address'] }}:9202" }
+    - { role: ashokc.kibana, instance_port: 5602, kibana_elasticsearch_url: "http://{{hostvars[groups['elasticsearch-nodes'][0]]['ansible_'+public_iface]['ipv4']['address'] }}:9202" }
 
 ```
