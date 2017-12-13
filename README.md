@@ -10,7 +10,7 @@ Ansible role for Kibana that works with Elasticsearch 5.x. Tested platforms at t
 ##### Dependency
 None.
 
-Kibana needs an elasticsearch instance to funtion. This role has been used and tested with the [elastic.elasticsearch](https://github.com/elastic/ansible-elasticsearch) role as the provisioner for elasticsearch but other provisioners should work as well.
+Kibana needs an elasticsearch instance to funtion. This role has been used and tested with the [elastic.elasticsearch](https://github.com/elastic/ansible-elasticsearch) role as the provisioner for elasticsearch, [ashokc.filebeat](https://github.com/ashokc/ansible-filebeat) for Filebeat, and [ashokc.logstash](https://github.com/ashokc/ansible-logstash) for Logstash as part of an ELK stack in the blog article [ELK Stack with Vagrant and Ansible](http://xplordat.com/2017/12/12/elk-stack-with-vagrant-and-ansible/)
 
 ## Usage
 
